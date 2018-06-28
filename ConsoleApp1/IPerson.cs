@@ -9,7 +9,5 @@ namespace ConsoleApp1
     public interface IPerson
     {
         //データの形式はIPersonという型だけをIF継承させておき、拡張に対応?
-        //double money { get; }
-        //int id { get; }
     }
 }

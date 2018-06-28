@@ -9,11 +9,11 @@ namespace ConsoleApp1
 {
     class Data 
     {
-        public static List<IPerson> datalist = new List<IPerson>();
+        public  List<Person> datalist = new List<Person>();
 
-        public IEnumerable<IPerson> CreatDataList(string filepath)
+        public IEnumerable<Person> CreatDataList(string filepath)
         {
-            List<IPerson> list = new List<IPerson>();
+            List<Person> list = new List<Person>();
             using (StreamReader sr = new StreamReader(filepath))
             {
                 string[] tmp;

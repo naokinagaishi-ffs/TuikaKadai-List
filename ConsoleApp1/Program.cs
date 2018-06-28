@@ -8,15 +8,6 @@ namespace ConsoleApp1
 {
     class Program
     {
-        /// <summary>
-        /// 以下２点の拡張の可能性を考慮する
-        /// １.計算方法が増える
-        /// ２.データのフォーマット（CSV，DBとか）が変わる
-        /// 
-        /// 計算方法は、Calculaterクラスに追加していけばよい
-        /// データのの形式は、IDataをIF継承させればよい ？
-        /// </summary>
-        /// <param name="args"></param>
         static void Main(string[] args)
         {
             CSVData data = new CSVData();

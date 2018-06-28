@@ -11,7 +11,6 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Data data = new Data();
-            //Calculater csvcal = new CSVCalculater();
 
             string dirname = @"C:\Users\naoki\Desktop\課題\List\";
             string filename = "SampleData.txt";

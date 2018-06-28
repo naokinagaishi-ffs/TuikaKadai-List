@@ -44,7 +44,7 @@ namespace ConsoleApp1
                 Console.WriteLine("お小遣いが一番少ない人は，{0}さんで，{1}円です。", p.name, p.money.ToString());
             }
 
-            //FFで要求①
+            //FFで要求
             IEnumerable<Person> ff_datalist = data.datalist.Where(x =>
                                                   x.id.ToString().Substring(3)
                                                   == "100");

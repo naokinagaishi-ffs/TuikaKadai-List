@@ -7,9 +7,9 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    class CSVData :IData
+    class Data 
     {
-        public List<Person> datalist = new List<Person>();
+        public  List<Person> datalist = new List<Person>();
 
         public IEnumerable<Person> CreatDataList(string filepath)
         {

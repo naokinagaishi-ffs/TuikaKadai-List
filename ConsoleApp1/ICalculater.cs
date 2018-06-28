@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    //public interface ICalculater<E> where E:IPerson
+    //public interface ICalculater<E> where E : IPerson
     public interface ICalculater
     {
-         double Average(IEnumerable<CSVPerson> list);
+         double Average(IEnumerable<IPerson> list);
     }
 }

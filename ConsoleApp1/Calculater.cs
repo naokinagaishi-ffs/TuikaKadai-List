@@ -9,11 +9,11 @@ namespace ConsoleApp1
     /// <summary>
     /// 今回の研修ではLINQ,Listを使って計算
     /// </summary>
-    public class Calculater
+    public class Calculater  
     {
         public static double Average(IEnumerable<Person> list)
         {
-            var result = list.Average(x => x.money);
+            var result = list.Average(x =>x.money );
 
             return result;
         }
@@ -21,7 +21,7 @@ namespace ConsoleApp1
         public static IEnumerable<Person> SearchRichPerson(IEnumerable<Person> list)
         {
             double maxmoney = list.Max(x => x.money);
-            //return null;
+            
             var result = (from p in list where p.money == maxmoney select p);
             return result;
         }

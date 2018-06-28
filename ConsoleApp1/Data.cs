@@ -7,13 +7,13 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    class CSVData :IData
+    class Data 
     {
-        public List<Person> datalist = new List<Person>();
+        public static List<IPerson> datalist = new List<IPerson>();
 
-        public IEnumerable<Person> CreatDataList(string filepath)
+        public IEnumerable<IPerson> CreatDataList(string filepath)
         {
-            List<Person> list = new List<Person>();
+            List<IPerson> list = new List<IPerson>();
             using (StreamReader sr = new StreamReader(filepath))
             {
                 string[] tmp;

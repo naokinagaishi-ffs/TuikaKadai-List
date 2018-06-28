@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    public class Person
+    public class Person:IPerson
     {
         public int id;
         public string name;

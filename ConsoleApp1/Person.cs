@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace ConsoleApp1
 {
-    public class Person:IPerson
+    class Person
     {
-        public int id;
+        public string id;
         public string name;
-        public double money;
-        
-        public Person(int id,string name, double money)
+        public int money;
+
+        public Person(string id, string name, int money)
         {
             this.id = id;
             this.name = name;
             this.money = money;
         }
+
+        IPersonDataAccesor dao = new CSVPerson();
 
     }
 }

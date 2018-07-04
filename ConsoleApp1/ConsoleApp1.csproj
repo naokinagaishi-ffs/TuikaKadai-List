@@ -43,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculater.cs" />
-    <Compile Include="IPerson.cs" />
+    <Compile Include="CSVPerson.cs" />
+    <Compile Include="IPersonDataAccesor.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

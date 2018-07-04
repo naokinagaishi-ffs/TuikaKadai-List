@@ -10,25 +10,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Data data = new Data();
+           
+            IPersonDataAccesor dao = new CSVPerson();
 
-            string dirname = @"C:\Users\naoki\Desktop\課題\List\";
-            string filename = "SampleData.txt";
+            var workerlist = dao.GetPerson();
 
-            data.datalist.AddRange(data.CreatDataList(dirname + filename));
 
             ////お小遣いの平均値をコンソールに表示
-            Console.WriteLine("小遣いの平均値は,{0}円です", Calculater.Average(data.datalist));
+            Console.WriteLine("小遣いの平均値は,{0}円です", Calculater.Average(workerlist));
 
             //お小遣いが一番多い人の名前と金額
-            var richpeople = Calculater.SearchRichPerson(data.datalist);
+            var richpeople = Calculater.SearchRichPerson(workerlist);
             foreach( var p in richpeople)
             {
                 Console.WriteLine("お小遣いが一番多い人は，{0}さんで，{1}円です。", p.name, p.money.ToString());
             }
 
             //お小遣いが一番少ない人の名前と金額
-            var poorpeople = Calculater.SearchPoorPerson(data.datalist);
+            var poorpeople = Calculater.SearchPoorPerson(workerlist);
             foreach( var p in poorpeople)
             {
                 Console.WriteLine("お小遣いが一番少ない人は，{0}さんで，{1}円です。", p.name, p.money.ToString());
@@ -36,8 +35,8 @@ namespace ConsoleApp1
             Console.WriteLine();
 
             //FFで要求①
-            IEnumerable<CSVPerson> ff_datalist = data.datalist.Where(x =>
-                                                  x.id.ToString().Substring(0,3)
+            IEnumerable<Person> ff_datalist = workerlist.Where(x =>
+                                                  x.id.Substring(0,3)
                                                   == "100");
             Console.WriteLine("FFの小遣いの平均値は,{0}円です", Calculater.Average(ff_datalist));
 
@@ -56,7 +55,7 @@ namespace ConsoleApp1
 
             
             //FFSで要求①
-            IEnumerable<CSVPerson> ffs_datalist = data.datalist.Where(x =>
+            IEnumerable<Person> ffs_datalist = workerlist.Where(x =>
                                                  x.id.ToString().Substring(0, 3)
                                                  == "128");
             Console.WriteLine("FFSの小遣いの平均値は,{0}円です", Calculater.Average(ffs_datalist));

@@ -9,9 +9,10 @@ namespace ConsoleApp1
     class Program
     {
         static void Main(string[] args)
-        {
+      
            
             IPersonDataAccesor dao = new CSVPerson();
+           
 
             var workerlist = dao.GetPerson();
 

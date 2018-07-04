@@ -7,13 +7,13 @@ using System.IO;
 
 namespace ConsoleApp1
 {
-    public class Person:IPerson
+    public class CSVPerson:IPerson
     {
         public int id;
         public string name;
         public double money;
         
-        public Person(int id,string name, double money)
+        public CSVPerson(int id,string name, double money)
         {
             this.id = id;
             this.name = name;

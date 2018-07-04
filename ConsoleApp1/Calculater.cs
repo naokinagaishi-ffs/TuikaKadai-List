@@ -11,14 +11,14 @@ namespace ConsoleApp1
     /// </summary>
     public class Calculater  
     {
-        public static double Average(IEnumerable<Person> list)
+        public static double Average(IEnumerable<CSVPerson> list)
         {
             var result = list.Average(x =>x.money );
 
             return result;
         }
 
-        public static IEnumerable<Person> SearchRichPerson(IEnumerable<Person> list)
+        public static IEnumerable<CSVPerson> SearchRichPerson(IEnumerable<CSVPerson> list)
         {
             double maxmoney = list.Max(x => x.money);
             
@@ -26,7 +26,7 @@ namespace ConsoleApp1
             return result;
         }
 
-        public static IEnumerable<Person> SearchPoorPerson(IEnumerable<Person> list)
+        public static IEnumerable<CSVPerson> SearchPoorPerson(IEnumerable<CSVPerson> list)
         {
             double minmoney = list.Min(x => x.money);
             var result = list.Where(x => x.money == minmoney);

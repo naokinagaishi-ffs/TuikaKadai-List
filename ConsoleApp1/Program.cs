@@ -11,7 +11,6 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Data data = new Data();
-            //Calculater csvcal = new CSVCalculater();
 
             string dirname = @"C:\Users\naoki\Desktop\課題\List\";
             string filename = "SampleData.txt";
@@ -37,7 +36,7 @@ namespace ConsoleApp1
             Console.WriteLine();
 
             //FFで要求①
-            IEnumerable<Person> ff_datalist = data.datalist.Where(x =>
+            IEnumerable<CSVPerson> ff_datalist = data.datalist.Where(x =>
                                                   x.id.ToString().Substring(0,3)
                                                   == "100");
             Console.WriteLine("FFの小遣いの平均値は,{0}円です", Calculater.Average(ff_datalist));
@@ -57,7 +56,7 @@ namespace ConsoleApp1
 
             
             //FFSで要求①
-            IEnumerable<Person> ffs_datalist = data.datalist.Where(x =>
+            IEnumerable<CSVPerson> ffs_datalist = data.datalist.Where(x =>
                                                  x.id.ToString().Substring(0, 3)
                                                  == "128");
             Console.WriteLine("FFSの小遣いの平均値は,{0}円です", Calculater.Average(ffs_datalist));

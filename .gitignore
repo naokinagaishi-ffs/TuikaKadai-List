@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+.~lock.考えられるエラー.odt#
+.~lock.疑問点メモdocx.odt#
+*.odt#

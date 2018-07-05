@@ -9,18 +9,18 @@ namespace ConsoleApp1
 {
     class Data 
     {
-        public  List<Person> datalist = new List<Person>();
+        public  List<CSVPerson> datalist = new List<CSVPerson>();
 
-        public IEnumerable<Person> CreatDataList(string filepath)
+        public IEnumerable<CSVPerson> CreatDataList(string filepath)
         {
-            List<Person> list = new List<Person>();
+            List<CSVPerson> list = new List<CSVPerson>();
             using (StreamReader sr = new StreamReader(filepath))
             {
                 string[] tmp;
                 while (sr.Peek() > -1)
                 {
                     tmp = sr.ReadLine().Split(',');
-                    list.Add(new Person(int.Parse(tmp[0]),
+                    list.Add(new CSVPerson(int.Parse(tmp[0]),
                                             tmp[1],
                                             double.Parse(tmp[2])
                                             ));

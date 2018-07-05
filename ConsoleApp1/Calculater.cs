@@ -9,7 +9,7 @@ namespace ConsoleApp1
     /// <summary>
     /// 今回の研修ではLINQ,Listを使って計算
     /// </summary>
-    public class Calculater  
+     class Calculater  
     {
         public static double Average(IEnumerable<Person> list)
         {

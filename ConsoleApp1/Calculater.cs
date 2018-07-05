@@ -13,6 +13,19 @@ namespace ConsoleApp1
     {
         public static double Average(IEnumerable<Person> list)
         {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+            //引数のリストの要素が１以上か。
+            if( list.Count() == 0)
+            {
+                Console.WriteLine("要素の数が0です。");
+            }
             var result = list.Average(x =>x.money );
 
             return result;

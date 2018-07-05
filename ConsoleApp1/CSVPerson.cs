@@ -11,24 +11,64 @@ namespace ConsoleApp1
     {
 
         string dirname = @"C:\Users\naoki\Desktop\課題\List\";
-        string filename = "SampleData.txt";
+        string filename = "0.txt";
 
 
-        public IEnumerable<Person> GetPerson()
+        public List<Person> GetPerson()
         {
-            List<Person> list = new List<Person>();
-            using (StreamReader sr = new StreamReader(dirname + filename))
+            List<Person> workerlist = new List<Person>();
+            //ファイルが存在するか確認
+            if (File.Exists(dirname + filename))
             {
-                string[] tmp;
-                while (sr.Peek() > -1)
+                using (StreamReader sr = new StreamReader(dirname + filename))
                 {
-                    tmp = sr.ReadLine().Split(',');
-                    list.Add(new Person(tmp[0], tmp[1], int.Parse(tmp[2])));
-                }
+                    string[] tmp;
+                    while (sr.Peek() > -1)
+                    {
+                        string oneSentence = sr.ReadLine();
+                        tmp = oneSentence.Split(',');
+                        //要素が３つか確認。
+                        if (tmp.Count() == 3)
+                        {
+                            workerlist.Add(new Person(tmp[0], tmp[1], int.Parse(tmp[2])));
+                        }
 
-                return list;
+                        else
+                        {
+                            Console.WriteLine("データに誤りがあります。");
+                            Console.WriteLine($"混入したデータは、{oneSentence}です。");
+                            Console.WriteLine($"現在参照しているファイルのパスは{dirname + filename}です。");
+                            this.dirname = CSVFileCorrector.ReloadDIrectory(dirname);
+                            this.filename = CSVFileCorrector.ReloadFile(filename);
+                            this.GetPerson();
+                        }
+
+                    }
+                }
             }
+            //ファイルが存在しないとき
+            else
+            {
+                this.dirname = CSVFileCorrector.ReloadDIrectory(dirname);
+                this.filename = CSVFileCorrector.ReloadFile(filename);
+                this.GetPerson();
+
+            }
+
+            //要素が１つ以上あるか。
+            bool elementExist = CSVFileCorrector.CheckElementsExists(workerlist);
+            if (elementExist == false)
+            {
+                this.dirname = CSVFileCorrector.ReloadDIrectory(dirname);
+                this.filename = CSVFileCorrector.ReloadFile(filename);
+                this.GetPerson();
+            }
+
+            return workerlist;
+
         }
+
     }
-        
 }
+        
+

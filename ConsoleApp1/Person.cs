@@ -18,8 +18,5 @@ namespace ConsoleApp1
             this.name = name;
             this.money = money;
         }
-
-        IPersonDataAccesor dao = new CSVPerson();
-
     }
 }

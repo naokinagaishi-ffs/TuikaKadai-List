@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculater.cs" />
+    <Compile Include="CSVFileCorrector.cs" />
     <Compile Include="CSVPerson.cs" />
     <Compile Include="IPersonDataAccesor.cs" />
     <Compile Include="Person.cs" />

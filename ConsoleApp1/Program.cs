@@ -10,9 +10,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            try
+            {
             IPersonDataAccesor dao = new CSVPerson();
             var workerlist = dao.GetPerson();
-
+            
             ////お小遣いの平均値をコンソールに表示
             Console.WriteLine("小遣いの平均値は,{0}円です", Calculater.Average(workerlist));
 
@@ -68,6 +70,14 @@ namespace ConsoleApp1
                 Console.WriteLine("FFSでお小遣いが一番少ない人は，{0}さんで，{1}円です。", p.name, p.money.ToString());
             }
 
+
+            }
+            catch(Exception e)
+            {
+                //例外をまとめてキャッチ
+                Console.WriteLine("例外処理が発生しました。");
+
+            }
         }
     }
 }

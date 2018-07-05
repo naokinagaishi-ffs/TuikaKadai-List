@@ -8,6 +8,6 @@ namespace ConsoleApp1
 {
     interface IPersonDataAccesor 
     {
-        IEnumerable<Person> GetPerson();
+        List<Person> GetPerson();
     }
 }
